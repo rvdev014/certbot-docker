@@ -1,4 +1,9 @@
 # certbot-docker
-Change mod of init-letsencrypt.sh: chmod +x init-letsencrypt.sh
-Run: DOMAIN_NAME=domain.com ./init-letsencrypt.sh 
+Change mod of init-letsencrypt.sh
+```bash
+chmod +x init-letsencrypt.sh
+```
+Run the following command to generate the certificates for your domain: 
+```bash
+DOMAIN_NAME=domain.com ./init-letsencrypt.sh
 ```
