@@ -1,11 +1,17 @@
 #!/bin/bash
 
+# check if $DOMAIN_NAME is not set, exit code
+if [ -z "$DOMAIN_NAME" ]; then
+  echo "DOMAIN_NAME is not set"
+  exit 1
+fi
+
 if ! [ -x "$(command -v docker-compose)" ]; then
   echo 'Error: docker-compose is not installed.' >&2
   exit 1
 fi
 
-domains=(docr.smmhub.ru www.docr.smmhub.ru)
+domains=($DOMAIN_NAME www.$DOMAIN_NAME)
 rsa_key_size=4096
 data_path="./data/certbot"
 email="simenshteyn@gmail.com" # Adding a valid address is strongly recommended
